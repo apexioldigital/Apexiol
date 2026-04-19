@@ -2037,6 +2037,202 @@ nav ul li:hover .dropdown {
                 padding: 60px 25px;
             }
         }
+        /* ========== COMPLETE MOBILE FIX (FINAL) ========== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* WhatsApp button – ensure visible and bigger */
+.wa {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: #25d366 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 9999 !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3) !important;
+}
+.wa svg {
+    width: 34px !important;
+    height: 34px !important;
+}
+
+@media (max-width: 768px) {
+    /* Header – stack everything */
+    header {
+        flex-direction: column !important;
+        padding: 15px 20px !important;
+        gap: 15px !important;
+        text-align: center !important;
+    }
+    .logo {
+        justify-content: center !important;
+    }
+    nav ul {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 15px !important;
+    }
+    nav a {
+        font-size: 14px !important;
+    }
+    header > div:last-child {
+        font-size: 16px !important;
+    }
+
+    /* Hero section */
+    .hero-combined {
+        padding: 50px 20px !important;
+        min-height: auto !important;
+    }
+    .hero-combined-text h1 {
+        font-size: 32px !important;
+        line-height: 1.3 !important;
+    }
+    .hero-combined-text p {
+        font-size: 15px !important;
+    }
+    .btn-primary, .btn-outline {
+        padding: 10px 22px !important;
+        font-size: 14px !important;
+    }
+    .hero-stats span {
+        font-size: 24px;
+    }
+    .floating-card {
+        display: none !important;
+    }
+
+    /* Slider */
+    .slider-item-modern {
+        margin: 0 20px;
+        font-size: 11px;
+    }
+    .slider-item-modern::after {
+        right: -18px;
+        font-size: 9px;
+    }
+
+    /* Services */
+    .services-modern {
+        padding: 50px 20px !important;
+    }
+    .services-modern h2 {
+        font-size: 30px !important;
+    }
+    .service-card-modern {
+        padding: 25px 15px;
+    }
+
+    /* Process */
+    .process {
+        padding: 50px 20px !important;
+    }
+    .process-flow {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .step {
+        width: 100%;
+    }
+    .process-flow::before {
+        display: none;
+    }
+
+    /* Industries */
+    .industries {
+        padding: 50px 20px !important;
+    }
+    .industries h2 {
+        font-size: 30px;
+    }
+    .industry-grid {
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .industry-card {
+        padding: 20px 10px;
+    }
+    .industry-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .industry-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* AI Banner */
+    .ai-banner {
+        padding: 45px 20px !important;
+        flex-direction: column;
+        text-align: center;
+    }
+    .ai-banner-text h2 {
+        font-size: 28px;
+    }
+    .ai-banner-image img {
+        max-width: 280px;
+    }
+
+    /* Contact Form */
+    .impressive-form {
+        padding: 30px 20px !important;
+        margin: 30px 15px;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 50px 25px 20px !important;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .socials {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-combined-text h1 {
+        font-size: 28px !important;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-primary, .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+    .industry-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .wa {
+        width: 56px !important;
+        height: 56px !important;
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+    .wa svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
     </style>
 </head>
 <body>
