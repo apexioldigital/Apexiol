@@ -2032,24 +2032,13 @@ nav ul li:hover .dropdown {
                 padding: 60px 25px;
             }
         }
-
-
-/* ========== MOBILE-FRIENDLY OVERRIDES (KEEPS ALL ORIGINAL STYLES) ========== */
+          /* ========== FULL MOBILE FRIENDLY OVERRIDES ========== */
 @media (max-width: 768px) {
-    /* WhatsApp button – larger and well positioned */
-    .wa {
-        width: 60px !important;
-        height: 60px !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        box-shadow: 0 6px 20px rgba(37,211,102,0.6) !important;
+    /* General */
+    body {
+        overflow-x: hidden;
     }
-    .wa svg {
-        width: 34px !important;
-        height: 34px !important;
-    }
-
-    /* Header – stack elements and improve tap targets */
+    /* Header */
     header {
         flex-direction: column;
         padding: 15px 20px !important;
@@ -2062,34 +2051,259 @@ nav ul li:hover .dropdown {
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 18px;
+        gap: 15px;
     }
     nav a {
-        font-size: 14px;
-        padding: 6px 0;
-        display: inline-block;
+        font-size: 13px;
+        padding: 5px 0;
     }
-    /* Phone number in header – adjust size */
     header > div:last-child {
+        font-size: 15px;
+    }
+    /* Hero section */
+    .hero-combined {
+        padding: 50px 20px !important;
+        min-height: auto;
+    }
+    .hero-combined-text h1 {
+        font-size: 32px !important;
+        line-height: 1.3;
+    }
+    .hero-combined-text p {
+        font-size: 15px;
+        max-width: 100%;
+    }
+    .hero-badge {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+    .hero-buttons {
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: 35px;
+    }
+    .btn-primary, .btn-outline {
+        padding: 10px 22px !important;
+        font-size: 14px !important;
+    }
+    .hero-stats {
+        gap: 25px;
+        justify-content: center;
+    }
+    .hero-stats span {
+        font-size: 24px;
+    }
+    .hero-stats div {
+        font-size: 12px;
+    }
+    /* Slider */
+    .slider-modern {
+        padding: 12px 0;
+    }
+    .slider-item-modern {
+        margin: 0 20px;
+        font-size: 11px;
+    }
+    .slider-item-modern::after {
+        right: -18px;
+        font-size: 9px;
+    }
+    /* Services section */
+    .services-modern {
+        padding: 50px 20px !important;
+    }
+    .services-modern h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    .services-container-modern {
+        gap: 20px;
+    }
+    .service-card-modern {
+        padding: 25px 15px;
+    }
+    .service-card-modern h3 {
+        font-size: 20px;
+    }
+    .service-card-modern p {
+        font-size: 13px;
+    }
+    /* Process section */
+    .process {
+        padding: 50px 20px !important;
+    }
+    .process h2 {
+        font-size: 30px;
+    }
+    .process-sub {
+        font-size: 14px;
+        margin-bottom: 35px;
+    }
+    .process-flow {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .step {
+        width: 100%;
+        padding: 20px;
+    }
+    .step p {
+        font-size: 13px;
+    }
+    .process-flow::before {
+        display: none;
+    }
+    /* Industries section */
+    .industries {
+        padding: 50px 20px !important;
+    }
+    .industries h2 {
+        font-size: 30px;
+    }
+    .industry-grid {
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+    .industry-card {
+        padding: 20px 10px;
+    }
+    .industry-icon {
+        width: 65px;
+        height: 65px;
+    }
+    .industry-icon svg {
+        width: 34px;
+        height: 34px;
+    }
+    .industry-name {
         font-size: 16px;
     }
-
-    /* Ensure content doesn't overlap WhatsApp button */
+    /* AI Banner */
+    .ai-banner {
+        padding: 45px 20px !important;
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .ai-banner-text h2 {
+        font-size: 28px;
+    }
+    .ai-banner-text p {
+        font-size: 14px;
+    }
+    .ai-banner-image img {
+        width: 100%;
+        max-width: 320px;
+    }
+    .ai-highlight {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    /* Contact Form (impressive-form) */
+    .impressive-form {
+        padding: 30px 20px !important;
+        margin: 30px 15px;
+    }
+    .form-title {
+        font-size: 24px;
+    }
+    .form-subtitle {
+        font-size: 13px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        padding: 14px 12px 8px 12px;
+        font-size: 14px;
+    }
+    .submit-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+    .form-note {
+        font-size: 11px;
+    }
+    /* Footer */
     .footer {
-        margin-bottom: 20px;
+        padding: 50px 25px 20px !important;
     }
-    /* Make all touch targets larger */
-    button, .btn-primary, .btn-outline, .submit-btn, .learn-more-modern, .industry-card {
-        cursor: pointer;
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
     }
-    /* Fix any floating card overflow on hero */
+    .footer-col h3 {
+        font-size: 18px;
+    }
+    .footer-col p, .footer-col a {
+        font-size: 13px;
+    }
+    .socials {
+        justify-content: center;
+    }
+    .footer-bottom {
+        font-size: 12px;
+    }
+    /* WhatsApp button – bigger and well placed */
+    .wa {
+        width: 60px !important;
+        height: 60px !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        box-shadow: 0 6px 20px rgba(37,211,102,0.6) !important;
+    }
+    .wa svg {
+        width: 34px !important;
+        height: 34px !important;
+    }
+    /* Hide floating cards on hero (optional but cleaner) */
     .floating-card {
-        display: none !important; /* cleaner on small screens */
+        display: none !important;
+    }
+    /* Fix for any overflowing elements */
+    .hero-bg-combined, .hero-bg-combined > * {
+        max-width: 100%;
     }
 }
 
-/* Extra small devices */
+/* Extra small devices (max-width: 480px) */
 @media (max-width: 480px) {
+    .hero-combined-text h1 {
+        font-size: 28px !important;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .btn-primary, .btn-outline {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .service-card-modern {
+        padding: 20px 12px;
+    }
+    .industry-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .industry-card {
+        padding: 15px 8px;
+    }
+    .industry-icon {
+        width: 55px;
+        height: 55px;
+    }
+    .industry-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    .industry-name {
+        font-size: 14px;
+    }
     .wa {
         width: 56px !important;
         height: 56px !important;
@@ -2099,12 +2313,6 @@ nav ul li:hover .dropdown {
     .wa svg {
         width: 30px !important;
         height: 30px !important;
-    }
-    nav ul {
-        gap: 12px;
-    }
-    nav a {
-        font-size: 12px;
     }
 }
 </style>
