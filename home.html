@@ -296,6 +296,127 @@ nav ul li:hover .dropdown {
         font-size: 16px;
     }
 }
+/* ========== MOBILE HAMBURGER MENU (FULLY WORKING) ========== */
+.menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+/* Sidebar navigation */
+#sidebar-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background: #0b1f3a;
+    z-index: 1000;
+    transition: 0.3s;
+    padding: 80px 20px 20px;
+    overflow-y: auto;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+}
+#sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#sidebar-nav li {
+    margin-bottom: 20px;
+}
+#sidebar-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+#sidebar-nav .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: transparent;
+    box-shadow: none;
+    pointer-events: auto;
+    padding-left: 15px;
+}
+#sidebar-nav .dropdown a {
+    font-size: 16px;
+    padding: 8px 10px;
+    color: #ccc;
+}
+#sidebar-nav .dropdown a:hover {
+    background: #f5c542;
+    color: #0b1f3a;
+}
+#sidebar-nav .dropdown-submenu .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background: rgba(255,255,255,0.1);
+    margin-top: 5px;
+    padding-left: 20px;
+}
+#sidebar-nav .submenu-arrow {
+    display: none;
+}
+/* Show hamburger and hide original nav on mobile */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+    header {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 20px !important;
+    }
+    .logo {
+        margin: 0;
+    }
+    /* Hide the original navigation and phone number on mobile */
+    nav ul {
+        display: none !important;
+    }
+    header > div:last-child {
+        display: none !important;
+    }
+    /* When checkbox checked, show sidebar */
+    .menu-toggle:checked ~ #sidebar-nav {
+        right: 0;
+    }
+    /* Hero spacing */
+    .hero-combined {
+        padding: 40px 20px !important;
+    }
+}
+/* Extra small devices */
+@media (max-width: 480px) {
+    #sidebar-nav {
+        width: 260px;
+        right: -260px;
+    }
+}
        /* ================= COMBINED HERO SECTION - FULL UPDATED CSS (FASTER SPEEDS) ================= */
 .hero-combined {
     position: relative;
@@ -2365,6 +2486,27 @@ html, body {
     </style>
 </head>
 <body>
+<script>
+// Mobile hamburger menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar-nav');
+if (menuToggle && sidebar) {
+    menuToggle.addEventListener('change', function() {
+        if (this.checked) {
+            sidebar.style.right = '0';
+        } else {
+            sidebar.style.right = '-300px';
+        }
+    });
+    // Close sidebar when clicking any link inside it
+    sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.checked = false;
+            sidebar.style.right = '-300px';
+        });
+    });
+}
+</script>
 
 <!-- HEADER -->
 <header>
@@ -2436,6 +2578,37 @@ html, body {
     <span></span>
 </label>
 </header>
+<div id="sidebar-nav">
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li>
+            <a href="#">Services</a>
+            <div class="dropdown">
+                <a href="web.html">Website Development</a>
+                <a href="marketing.html">Digital Marketing</a>
+                <a href="custom.html">Custom Software</a>
+                <a href="ecommerce.html">Ecommerce</a>
+            </div>
+        </li>
+        <li>
+            <a href="#">About</a>
+            <div class="dropdown">
+                <a href="about.html">About Us</a>
+                <div class="dropdown-submenu">
+                    <a href="#">Industries We Serve</a>
+                    <div class="submenu">
+                        <a href="healthcare.html">Healthcare</a>
+                        <a href="restaurants.html">Restaurants & Hotels</a>
+                        <a href="ecommerce.html">Ecommerce</a>
+                        <a href="construction.html">Architecture & Construction</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
 <!-- ================= HERO SECTION WITH COMBINED ANIMATIONS ================= -->
  <script>
         // Mouse-follow for gradient orb
