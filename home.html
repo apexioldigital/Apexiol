@@ -2539,6 +2539,49 @@ html, body {
 .menu-icon.open span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
 }
+/* ========== SIDEBAR SMOOTH & YELLOW HOVER ========== */
+#sidebar-nav a {
+    transition: color 0.2s ease, background 0.2s ease !important;
+}
+#sidebar-nav a:hover {
+    color: #f5c542 !important;
+    background: rgba(245,197,66,0.1) !important;
+}
+#sidebar-nav .dropdown a:hover,
+#sidebar-nav .submenu a:hover {
+    background: #f5c542 !important;
+    color: #0b1f3a !important;
+}
+/* Hamburger to cross animation */
+.menu-icon {
+    transition: 0.3s;
+}
+.menu-icon span {
+    transition: 0.2s;
+}
+.menu-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.menu-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+/* Sidebar transition smoothness */
+#sidebar-nav {
+    transition: right 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+/* Global smoothness */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+a, button, .btn-primary, .btn-outline, .service-card-modern, .industry-card {
+    transition: all 0.3s ease;
+}
+html {
+    scroll-behavior: smooth;
+}
 
     </style>
 </head>
@@ -2962,39 +3005,30 @@ html, body {
         if(e.target === this) toggleContact();
     });
 </script>
-    <script>
-// Mobile hamburger menu toggle
+<script>
+// Mobile hamburger menu toggle with cross animation
 const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar-nav');
-if (menuToggle && sidebar) {
-    menuToggle.addEventListener('change', function() {
-        if (this.checked) {
-            sidebar.style.right = '0';
-        } else {
-            sidebar.style.right = '-300px';
-        }
-    });
-    // Close sidebar when clicking any link inside it
-    sidebar.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.checked = false;
-            sidebar.style.right = '-280px';
-        });
-    });
-    // Add this inside your existing menu-toggle event listener
 const menuIcon = document.querySelector('.menu-icon');
-if (menuToggle && sidebar) {
+
+if (menuToggle && sidebar && menuIcon) {
     menuToggle.addEventListener('change', function() {
         if (this.checked) {
             sidebar.style.right = '0';
-            // Optional: change hamburger to cross
             menuIcon.classList.add('open');
         } else {
             sidebar.style.right = '-300px';
             menuIcon.classList.remove('open');
         }
     });
-}
+    // Close sidebar when clicking any link inside it
+    sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.checked = false;
+            sidebar.style.right = '-300px';
+            menuIcon.classList.remove('open');
+        });
+    });
 }
 </script>
 </body>
