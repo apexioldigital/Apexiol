@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Professional website development services – custom code, WordPress, frontend & backend. Fast, secure, and scalable web solutions.">
+<meta name="keywords" content="website development, custom web development, WordPress development, frontend backend, web agency">
+<meta name="author" content="Apexiol">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://apexiol.com/web.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apexiol | Website Development – Modern Web Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon (exact same as header logo) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b1f3a'/%3E%3Cpath d='M50 20 L76 76 H64 L58 62 H42 L36 76 H24 L50 20Z' fill='%23F5C542'/%3E%3Crect x='40' y='52' width='20' height='4' rx='2' fill='%230b1f3a'/%3E%3Cpolygon points='50,24 53,28 50,32 47,28' fill='%23FFFFFF'/%3E%3C/svg%3E">
+    <style>
+        /* ---------- GLOBAL RESET & BASE ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #ffffff;
+        }
+
+        /* ---------- HEADER & NAVIGATION (full updated) ---------- */
+header {
+    background: #0b1f3a;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+/* Active page link - main navigation */
+nav a.active {
+    color: #f5c542 !important;
+}
+/* Dropdown base */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border-radius: 8px;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 1000;
+    pointer-events: none;
+}
+nav ul li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.dropdown a {
+    display: block;
+    padding: 12px;
+    color: #0b1f3a;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.dropdown a:hover {
+    background: #f5c542;
+    color: #0b1f3a;
+}
+/* Active page inside dropdown */
+.dropdown a.active {
+    background: #f5c542 !important;
+    color: #0b1f3a !important;
+}
+/* Nested submenu (Industries We Serve) */
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.submenu-arrow {
+    font-size: 12px;
+    transition: transform 0.2s;
+}
+.submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #fff;
+    border-radius: 8px;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 1001;
+}
+.dropdown-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+.dropdown-submenu:hover .submenu-arrow {
+    transform: translateX(4px);
+}
+.submenu a {
+    display: block;
+    padding: 12px 16px;
+    color: #0b1f3a;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+.submenu a:hover {
+    background: #f5c542;
+    color: #0b1f3a;
+}
+/* Active page inside submenu */
+.submenu a.active {
+    background: #f5c542 !important;
+    color: #0b1f3a !important;
+}
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+    header {
+        padding: 15px 25px;
+    }
+    .submenu {
+        position: static;
+        box-shadow: none;
+        padding-left: 20px;
+        background: #f8f8f8;
+        margin-top: 5px;
+    }
+    .submenu a {
+        padding: 10px 20px;
+    }
+    nav ul {
+        gap: 15px;
+    }
+}
+/* ================= WEBSITE DEVELOPMENT PAGE STYLES ================= */
+.webdev-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 60px 40px;
+    background: #ffffff;
+}
+
+/* Hero section */
+.webdev-hero {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+}
+.webdev-hero-text {
+    flex: 1;
+}
+.hero-badge {
+    display: inline-block;
+    background: rgba(245,197,66,0.12);
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 13px;
+    color: #f5c542;
+    margin-bottom: 20px;
+}
+.webdev-hero-text h1 {
+    font-size: 48px;
+    color: #0b1f3a;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.gradient {
+    background: linear-gradient(90deg, #f5c542, #ffd966);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.webdev-hero-text p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.btn-primary, .btn-outline {
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.btn-primary {
+    background: #f5c542;
+    color: #0b1f3a;
+}
+.btn-primary:hover {
+    background: #ffd966;
+    transform: translateY(-2px);
+}
+.btn-outline {
+    border: 1.5px solid #0b1f3a;
+    color: #0b1f3a;
+}
+.btn-outline:hover {
+    background: #0b1f3a;
+    color: white;
+}
+.webdev-hero-visual svg {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+}
+
+/* Workflow */
+.workflow {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.workflow h2 {
+    font-size: 32px;
+    color: #0b1f3a;
+    margin-bottom: 30px;
+}
+.flow-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #f7f9fc;
+    padding: 25px 20px;
+    border-radius: 40px;
+}
+.flow-step {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: 600;
+    color: #0b1f3a;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.flow-arrow {
+    font-size: 20px;
+    color: #f5c542;
+}
+
+/* Offer cards */
+.services-overview h2, .comparison h2, .integrations h2, .faq h2 {
+    font-size: 32px;
+    color: #0b1f3a;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+.offer-card {
+    background: #f7f9fc;
+    padding: 30px 25px;
+    border-radius: 24px;
+    transition: 0.3s;
+    border: 1px solid #eef2f6;
+}
+.offer-card:hover {
+    transform: translateY(-5px);
+    border-color: #f5c542;
+}
+.offer-card h3 {
+    font-size: 22px;
+    color: #0b1f3a;
+    margin-bottom: 15px;
+}
+.offer-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Comparison chart */
+.comparison {
+    background: #f7f9fc;
+    padding: 40px;
+    border-radius: 30px;
+    margin-bottom: 60px;
+}
+.chart {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.chart-bar {
+    margin-bottom: 20px;
+}
+.label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #0b1f3a;
+}
+.bar-bg {
+    background: #e0e4e8;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.bar-fill {
+    background: #0b1f3a;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.bar-fill.wp {
+    background: #f5c542;
+    color: #0b1f3a;
+}
+.chart-note {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Integrations */
+.integrations {
+    margin-bottom: 60px;
+}
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+.integration-item {
+    background: white;
+    border: 1px solid #eef2f6;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+}
+.integration-item .icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 12px;
+}
+.integration-item h3 {
+    font-size: 20px;
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+.integration-item p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+.integration-note {
+    text-align: center;
+    background: #f7f9fc;
+    padding: 15px;
+    border-radius: 40px;
+    margin-top: 30px;
+    color: #0b1f3a;
+    font-weight: 500;
+}
+
+/* CTA */
+.webdev-cta {
+    background: linear-gradient(135deg, #0b1f3a, #122b52);
+    text-align: center;
+    padding: 50px;
+    border-radius: 30px;
+    margin-bottom: 60px;
+}
+.webdev-cta h2 {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 15px;
+}
+.webdev-cta p {
+    color: #ccd6e0;
+    margin-bottom: 25px;
+}
+.btn-cta {
+    background: #f5c542;
+    color: #0b1f3a;
+    padding: 12px 32px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    transition: 0.3s;
+}
+.btn-cta:hover {
+    background: #ffd966;
+    transform: translateY(-2px);
+}
+
+/* FAQ */
+.faq-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+.faq-question {
+    background: #f7f9fc;
+    padding: 25px;
+    border-radius: 20px;
+}
+.faq-question h3 {
+    font-size: 18px;
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+.faq-question p {
+    color: #555;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .webdev-page {
+        padding: 40px 25px;
+    }
+    .webdev-hero-text h1 {
+        font-size: 36px;
+    }
+    .flow-steps {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+    .chart {
+        width: 100%;
+    }
+}
+
+        /* ---------- FOOTER (identical on all pages) ---------- */
+        .footer {
+            background: #0b1f3a;
+            color: #fff;
+            padding: 80px 60px 20px;
+            margin-top: 40px;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        .footer-logo {
+            color: #f5c542;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        .footer-col h3 {
+            margin-bottom: 15px;
+            color: #f5c542;
+        }
+        .footer-col a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+        .footer-col a:hover {
+            color: #f5c542;
+        }
+        .footer-col p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .socials a {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .socials a:hover {
+            background: #f5c542;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+        }
+        @media (max-width: 900px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            .footer {
+                padding: 60px 25px 20px;
+            }
+        }
+
+        /* ---------- IMPRESSIVE CONTACT FORM (identical on all pages) ---------- */
+        .impressive-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 35px;
+            border-radius: 32px;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .impressive-form:hover {
+            box-shadow: 0 30px 55px -12px rgba(11, 31, 58, 0.25);
+        }
+        .form-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0b1f3a;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .form-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+            border-bottom: 2px #f5c542;
+            display: inline-block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 6px;
+        }
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .form-group {
+            flex: 1;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .form-group.full-width {
+            flex: 100%;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 16px 12px 8px 12px;
+            font-size: 16px;
+            border: 1px solid #e0e4e8;
+            border-radius: 16px;
+            background: #fff;
+            outline: none;
+            transition: 0.2s;
+            font-family: 'Poppins', sans-serif;
+            resize: vertical;
+        }
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b1f3a' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+        }
+        .form-group label {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 0 6px;
+            color: #888;
+            font-size: 14px;
+            transition: 0.2s;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+        .form-group textarea ~ label {
+            top: 18px;
+            transform: translateY(0);
+        }
+        .form-group input:focus ~ label,
+        .form-group input:not(:placeholder-shown) ~ label,
+        .form-group select:focus ~ label,
+        .form-group select:not(:has(option[value=""]:checked)) ~ label,
+        .form-group textarea:focus ~ label,
+        .form-group textarea:not(:placeholder-shown) ~ label {
+            top: 0px;
+            font-size: 11px;
+            color:black ;
+            font-weight: 600;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color:#f5c542 ;
+            box-shadow: 0 0 0 3px rgba(245,197,66,0.2);
+        }
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(90deg, #0b1f3a, #1a3a60);
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+        .submit-btn:hover {
+            background: linear-gradient(90deg, #f5c542, #e6b422);
+            color: #0b1f3a;
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(245,197,66,0.3);
+        }
+        .form-note {
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .impressive-form {
+                padding: 30px 20px;
+                margin: 0 15px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        /* ---------- WHATSAPP FLOAT BUTTON ---------- */
+        .wa {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9998;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(37,211,102,.5);
+            transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
+        }
+        .wa:hover {
+            transform: scale(1.13);
+            box-shadow: 0 8px 28px rgba(37,211,102,.6);
+        }
+        .wa svg {
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+
+        /* additional responsive utilities */
+        @media (max-width: 900px) {
+            header {
+                padding: 15px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================= HEADER (identical on all pages) ================= -->
+<header>
+    <div class="logo">
+        <svg width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F5C542"/>
+                    <stop offset="100%" stop-color="#E6B422"/>
+                </linearGradient>
+            </defs>
+            <path d="M50 20 L76 76 H64 L58 62 H42 L36 76 H24 L50 20Z" fill="url(#goldGrad)"/>
+            <rect x="40" y="52" width="20" height="4" rx="2" fill="#0B1F3A"/>
+            <circle cx="50" cy="28" r="2.5" fill="#FFFFFF"/>
+        </svg>
+        <div class="logo-text">Apexiol</div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li>
+                <a href="#">Services</a>
+                <div class="dropdown">
+                    <a href="web.html">Website Development</a>
+                    <a href="marketing.html">Digital Marketing</a>
+                    <a href="custom.html">Custom Software</a>
+                    <a href="ecommerce.html">Ecommerce</a>
+                </div>
+            </li>
+            <li class="dropdown-parent">
+                <a href="#">About</a>
+                <div class="dropdown">
+                    <a href="about.html">About Us</a>
+                    <div class="dropdown-submenu">
+                        <a href="#">Industries We Serve <span class="submenu-arrow">→</span></a>
+                        <div class="submenu">
+                            <a href="healthcare.html">Healthcare</a>
+                            <a href="restaurants.html">Restaurants & Hotels</a>
+                            <a href="ecommerce.html">Ecommerce</a>
+                            <a href="construction.html">Architecture & Construction</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div style="color:#f5c542;">+92 3110728099</div>
+</header>
+
+<!-- ================= WEBSITE DEVELOPMENT PAGE MAIN CONTENT ================= -->
+<main>
+    <div class="webdev-page">
+
+        <!-- Hero section with simple visual -->
+        <div class="webdev-hero">
+            <div class="webdev-hero-text">
+                <span class="hero-badge">Website Development</span>
+                <h1>Websites That Work <span class="gradient">For You</span></h1>
+                <p>We build fast, secure, and user‑friendly websites. Whether you need a custom‑coded platform or a powerful WordPress solution, we keep things simple. No technical overload, just results.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-primary">Start Your Project →</a>
+                </div>
+            </div>
+            <div class="webdev-hero-visual">
+                <svg viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="350" height="220" fill="#f7f9fc" rx="16"/>
+                    <circle cx="70" cy="110" r="30" fill="#0b1f3a"/>
+                    <circle cx="175" cy="80" r="30" fill="#f5c542"/>
+                    <circle cx="280" cy="140" r="30" fill="#0b1f3a"/>
+                    <path d="M100 110 L145 90 L205 100 L250 130" stroke="#f5c542" stroke-width="3" fill="none" stroke-dasharray="5 3"/>
+                    <text x="70" y="180" text-anchor="middle" font-size="13" fill="#0b1f3a">Frontend</text>
+                    <text x="175" y="155" text-anchor="middle" font-size="13" fill="#0b1f3a">Backend</text>
+                    <text x="280" y="195" text-anchor="middle" font-size="13" fill="#0b1f3a">Database</text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Simple flowchart: how we build websites -->
+        <div class="workflow">
+            <h2>Our Simple Process</h2>
+            <div class="flow-steps">
+                <div class="flow-step">📋 Understand</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">🎨 Design</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">⚙️ Build</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">🧪 Test</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">🚀 Launch</div>
+            </div>
+        </div>
+
+        <!-- What we offer (frontend, backend, WordPress, automation) – clean boxes -->
+        <div class="services-overview">
+            <h2>What We Offer</h2>
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <h3>Custom‑Coded Websites</h3>
+                    <p>You get full control, maximum performance, and exactly what your business needs. No unnecessary plugins or bloat.</p>
+                </div>
+                <div class="offer-card">
+                    <h3>WordPress Solutions</h3>
+                    <p>We build flexible, easy‑to‑manage WordPress sites with custom themes. Everything stays lightweight and fast.</p>
+                </div>
+                <div class="offer-card">
+                    <h3>Frontend & Backend</h3>
+                    <p>Beautiful interfaces plus solid logic behind the scenes. A complete package that works seamlessly.</p>
+                </div>
+                <div class="offer-card">
+                    <h3>Automation & Integrations</h3>
+                    <p>Connect your website to the tools you already use, like email and CRM. Save time and reduce manual work.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual comparison graph: custom vs WordPress (simple bar chart) -->
+        <div class="comparison">
+            <h2>Custom Code or WordPress – We Choose What’s Right for You</h2>
+            <div class="chart">
+                <div class="chart-bar">
+                    <span class="label">Performance</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 95%">Custom</div></div>
+                    <div class="bar-bg"><div class="bar-fill wp" style="width: 85%">WordPress</div></div>
+                </div>
+                <div class="chart-bar">
+                    <span class="label">Ease of Editing</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 70%">Custom</div></div>
+                    <div class="bar-bg"><div class="bar-fill wp" style="width: 95%">WordPress</div></div>
+                </div>
+                <div class="chart-bar">
+                    <span class="label">Launch Speed</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 75%">Custom</div></div>
+                    <div class="bar-bg"><div class="bar-fill wp" style="width: 90%">WordPress</div></div>
+                </div>
+            </div>
+            <p class="chart-note">We explain the trade‑offs honestly – no hidden agenda, just what works best for your goals.</p>
+        </div>
+
+        <!-- Integrations & automation in plain language -->
+        <div class="integrations">
+            <h2>Connect Your Website to the Tools You Love</h2>
+            <div class="integration-grid">
+                <div class="integration-item">
+                    <span class="icon">📧</span>
+                    <h3>Email & Marketing</h3>
+                    <p>Automatically add form entries to your newsletter or CRM – no manual exports.</p>
+                </div>
+                <div class="integration-item">
+                    <span class="icon">📅</span>
+                    <h3>Booking & Calendars</h3>
+                    <p>Let clients book appointments directly – syncs with Google Calendar, Calendly, etc.</p>
+                </div>
+                <div class="integration-item">
+                    <span class="icon">📊</span>
+                    <h3>Analytics & Tracking</h3>
+                    <p>Understand your visitors with Google Analytics, Hotjar, or custom dashboards.</p>
+                </div>
+                <div class="integration-item">
+                    <span class="icon">🔄</span>
+                    <h3>Workflow Automation</h3>
+                    <p>Zapier, Make (Integromat) – connect hundreds of apps without coding.</p>
+                </div>
+            </div>
+            <div class="integration-note">No custom coding required for most integrations – we set everything up so you can focus on your business.</div>
+        </div>
+
+        <!-- Agency promotion / CTA -->
+        <div class="webdev-cta">
+            <h2>Let’s Build Your Next Website</h2>
+            <p>No fluff, no hidden costs – just honest advice and a website that works for you.</p>
+            <a href="contact.html" class="btn-cta">Start your project→</a>
+        </div>
+
+        <!-- FAQ (plain questions, human answers) -->
+        <div class="faq">
+            <h2>Common Questions</h2>
+            <div class="faq-list">
+                <div class="faq-question">
+                    <h3>How long does it take to build a website?</h3>
+                    <p>It depends on complexity. A simple business site can take 1-2 weeks; a custom platform 1-4 weeks. We’ll give you a clear timeline upfront.</p>
+                </div>
+                <div class="faq-question">
+                    <h3>Can I update the website myself after it’s built?</h3>
+                    <p>Yes. For WordPress sites, you get an easy editor. For custom sites, we can add a simple CMS or provide training.</p>
+                </div>
+                <div class="faq-question">
+                    <h3>Do you offer maintenance and support?</h3>
+                    <p>Absolutely. We offer monthly plans that include updates, backups, security, and 24/7 monitoring.</p>
+                </div>
+                <div class="faq-question">
+                    <h3>Will my website be mobile‑friendly?</h3>
+                    <p>Always. Every site we build is fully responsive and tested on all devices.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ================= CONTACT FORM (identical on every page) ================= -->
+<form class="impressive-form" action="contact.php" method="post">
+    <h3 class="form-title">Let's Connect</h3>
+    <p class="form-subtitle">We’d love to hear about your project</p>
+    <div class="form-row">
+        <div class="form-group">
+            <input type="text" id="name" required>
+            <label for="name">Full Name</label>
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" required>
+            <label for="email">Email Address</label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <input type="tel" id="phone">
+            <label for="phone">Phone Number</label>
+        </div>
+        <div class="form-group">
+            <select id="service" required>
+                <option value="" disabled selected></option>
+                <option>Website Development</option>
+                <option>Digital Marketing</option>
+                <option>Custom Software</option>
+                <option>Ecommerce Solutions</option>
+                <option>UI/UX Design</option>
+            </select>
+            <label for="service">Service Required</label>
+        </div>
+    </div>
+    <div class="form-group full-width">
+        <textarea id="message" rows="5" required></textarea>
+        <label for="message">Your Message</label>
+    </div>
+    <button type="submit" class="submit-btn">
+        <span>Send Message</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+    </button>
+    <p class="form-note">We’ll get back to you within 24 hours</p>
+</form>
+
+<!-- ================= FOOTER (identical on all pages) ================= -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h2 class="footer-logo">Apexiol</h2>
+            <p>AI-powered digital agency helping businesses grow through automation, marketing and modern web solutions.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+            <h3>Our Services</h3>
+            <a href="web.html">Website Development</a>
+            <a href="marketing.html">Digital Marketing</a>
+            <a href="custom.html">Custom Software</a>
+            <a href="ecommerce.html">Ecommerce Solutions</a>
+        </div>
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <p>Email: info@apexiol.com</p>
+            <p>Phone: +92 3110728099</p>
+            <div class="socials">
+                <a href="https://www.instagram.com/apexiol_digital" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm4.25 5.5A4.75 4.75 0 1 0 16.75 12 4.75 4.75 0 0 0 12 7.5zm0 7.75A3 3 0 1 1 15 12a3 3 0 0 1-3 3.25zm5.5-8.75a1.25 1.25 0 1 1-1.25-1.25A1.25 1.25 0 0 1 17.5 6.5z"/>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61584178626695" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2c0-2 1-3 3-3h2v3h-2c-1 0-1 .5-1 1v1h3l-1 3h-2v7A10 10 0 0 0 22 12z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/apexiol/" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 5h4v13H4V8zm7 0h4v2h.1c.5-1 2-2 4-2 4 0 5 3 5 7v6h-4v-6c0-2-1-3-2-3s-3 1-3 3v6h-4V8z"/>
+                    </svg>
+                </a>
+                <a href="#" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M22 5.9c-.7.3-1.5.6-2.3.7a4 4 0 0 0 1.7-2.2 8 8 0 0 1-2.6 1 4 4 0 0 0-6.8 3.6A11 11 0 0 1 3 4.6a4 4 0 0 0 1.2 5.3 4 4 0 0 1-1.8-.5v.1a4 4 0 0 0 3.2 3.9 4 4 0 0 1-1.8.1 4 4 0 0 0 3.7 2.8A8 8 0 0 1 2 18.6 11 11 0 0 0 8 20c7 0 11-6 11-11v-.5A8 8 0 0 0 22 5.9z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 Apexiol. All rights reserved.
+    </div>
+</footer>
+
+<!-- ================= WHATSAPP FLOAT BUTTON ================= -->
+<a class="wa" href="https://wa.me/923110728099" target="_blank" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path fill="#fff" d="M4.9 43.3l2.7-9.8C5.9 31 5 28.1 5 25 5 13.9 13.9 5 25 5s20 8.9 20 20-8.9 20-20 20c-3 0-5.8-.7-8.3-1.9l-11.8.2z"/>
+        <path fill="#25d366" d="M25 7C15.1 7 7 15.1 7 25c0 3.2.9 6.3 2.5 9L7 43l9.3-2.4C18.8 42.1 21.8 43 25 43c9.9 0 18-8.1 18-18S34.9 7 25 7z"/>
+        <path fill="#fff" d="M32.5 28.3c-.4-.2-2.5-1.2-2.9-1.4-.4-.2-.7-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.8-.7-3.4-2.1-1.3-1.1-2.1-2.5-2.4-2.9-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3 0-.5-.1-.7-.1-.2-.9-2.3-1.3-3.1-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.4-1.4 3.3 0 2 1.4 3.9 1.6 4.1.2.3 2.8 4.3 6.8 6 .9.4 1.7.6 2.3.8.9.3 1.8.2 2.5.1.8-.1 2.4-.9 2.7-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.8-.5z"/>
+    </svg>
+</a>
+
+<!-- no extra scripts needed for core functionality -->
+</body>
+</html>
