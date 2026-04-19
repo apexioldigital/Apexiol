@@ -2486,27 +2486,7 @@ html, body {
     </style>
 </head>
 <body>
-<script>
-// Mobile hamburger menu toggle
-const menuToggle = document.getElementById('menu-toggle');
-const sidebar = document.getElementById('sidebar-nav');
-if (menuToggle && sidebar) {
-    menuToggle.addEventListener('change', function() {
-        if (this.checked) {
-            sidebar.style.right = '0';
-        } else {
-            sidebar.style.right = '-300px';
-        }
-    });
-    // Close sidebar when clicking any link inside it
-    sidebar.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.checked = false;
-            sidebar.style.right = '-300px';
-        });
-    });
-}
-</script>
+
 
 <!-- HEADER -->
 <header>
@@ -2924,6 +2904,27 @@ if (menuToggle && sidebar) {
     document.getElementById("contactOverlay")?.addEventListener("click", function(e) {
         if(e.target === this) toggleContact();
     });
+</script>
+    <script>
+// Mobile hamburger menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar-nav');
+if (menuToggle && sidebar) {
+    menuToggle.addEventListener('change', function() {
+        if (this.checked) {
+            sidebar.style.right = '0';
+        } else {
+            sidebar.style.right = '-300px';
+        }
+    });
+    // Close sidebar when clicking any link inside it
+    sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.checked = false;
+            sidebar.style.right = '-300px';
+        });
+    });
+}
 </script>
 </body>
 </html>
