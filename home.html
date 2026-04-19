@@ -167,6 +167,135 @@ nav ul li:hover .dropdown {
         gap: 15px;
     }
 }
+          /* ========== MOBILE HAMBURGER MENU (SIDEBAR) ========== */
+/* Hide checkbox */
+.menu-toggle {
+    display: none;
+}
+/* Hamburger icon (visible only on mobile) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+/* Sidebar navigation (mobile) */
+.sidebar-nav {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100%;
+    background: #0b1f3a;
+    z-index: 1000;
+    transition: 0.3s;
+    padding: 80px 20px 20px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    overflow-y: auto;
+}
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar-nav li {
+    margin-bottom: 20px;
+}
+.sidebar-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.sidebar-nav .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: transparent;
+    box-shadow: none;
+    pointer-events: auto;
+    padding-left: 15px;
+}
+.sidebar-nav .dropdown a {
+    font-size: 16px;
+    padding: 8px 10px;
+    color: #ccc;
+}
+.sidebar-nav .dropdown a:hover {
+    background: #f5c542;
+    color: #0b1f3a;
+}
+.sidebar-nav .dropdown-submenu .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background: rgba(255,255,255,0.1);
+    margin-top: 5px;
+    padding-left: 20px;
+}
+.sidebar-nav .submenu-arrow {
+    display: none;
+}
+/* Show hamburger and sidebar on mobile */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+    /* Hide original nav on mobile */
+    nav ul {
+        display: none !important;
+    }
+    /* When checkbox checked, show sidebar */
+    .menu-toggle:checked ~ .sidebar-nav {
+        right: 0;
+    }
+    /* Adjust header to position relative for absolute hamburger */
+    header {
+        position: relative;
+        padding: 15px 20px !important;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        margin: 0;
+    }
+    header > div:last-child {
+        display: none; /* hide phone number on mobile to save space */
+    }
+    /* Hero adjustments for mobile (to fit below header) */
+    .hero-combined {
+        padding: 40px 20px !important;
+        margin-top: 0;
+    }
+}
+/* Extra small devices */
+@media (max-width: 480px) {
+    .sidebar-nav {
+        width: 260px;
+        right: -260px;
+    }
+    .sidebar-nav a {
+        font-size: 16px;
+    }
+}
        /* ================= COMBINED HERO SECTION - FULL UPDATED CSS (FASTER SPEEDS) ================= */
 .hero-combined {
     position: relative;
