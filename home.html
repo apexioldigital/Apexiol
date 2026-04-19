@@ -2483,6 +2483,62 @@ html, body {
         height: 30px !important;
     }
 }
+/* ========== SIDEBAR STYLE IMPROVEMENTS ========== */
+#sidebar-nav {
+    background: #0b1f3a;
+    font-family: 'Poppins', sans-serif;
+}
+#sidebar-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+#sidebar-nav a:hover {
+    color: #f5c542 !important;
+    background: rgba(245,197,66,0.1);
+}
+#sidebar-nav .dropdown a:hover {
+    background: #f5c542;
+    color: #0b1f3a !important;
+}
+#sidebar-nav .submenu a:hover {
+    background: #f5c542;
+    color: #0b1f3a !important;
+}
+/* Active page highlight in sidebar */
+#sidebar-nav a.active {
+    color: #f5c542 !important;
+    font-weight: 600;
+}
+/* Dropdown and submenu indentation */
+#sidebar-nav .dropdown {
+    padding-left: 20px;
+}
+#sidebar-nav .submenu {
+    padding-left: 30px;
+}
+/* Smooth opening/closing of sidebar */
+#sidebar-nav {
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Ensure no extra spacing issues */
+#sidebar-nav ul {
+    margin: 0;
+    padding: 0;
+}
+#sidebar-nav li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+.menu-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
 
     </style>
 </head>
@@ -2925,6 +2981,20 @@ if (menuToggle && sidebar) {
             sidebar.style.right = '-280px';
         });
     });
+    // Add this inside your existing menu-toggle event listener
+const menuIcon = document.querySelector('.menu-icon');
+if (menuToggle && sidebar) {
+    menuToggle.addEventListener('change', function() {
+        if (this.checked) {
+            sidebar.style.right = '0';
+            // Optional: change hamburger to cross
+            menuIcon.classList.add('open');
+        } else {
+            sidebar.style.right = '-300px';
+            menuIcon.classList.remove('open');
+        }
+    });
+}
 }
 </script>
 </body>
